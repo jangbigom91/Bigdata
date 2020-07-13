@@ -23,11 +23,12 @@ fname = "{:%y-%m-%d-%H-%M.txt}".format(datetime.now())
 file = open(fname, mode='w', encoding='utf-8')
 
 file.write('순위,제목,날짜\n')
+now = "{:%y%m%d%H%M%S}".format(datetime.now())
 
 for item in item_boxs:
     file.write('%s,' %item.find_element_by_css_selector('.item_num').text)
     file.write('%s' %item.find_element_by_css_selector('.item_title_wrap > .item_title').text)
-    file.write('%s\n' % "{%y%m%d%H%M%s}".format(datetime.now()))
+    file.write('%s\n' % now)
 
 #파일 닫기
 file.close()
