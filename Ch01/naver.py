@@ -41,3 +41,6 @@ for item in item_boxs:
 
 #파일닫기
 file.close()
+
+# 브라우저 종료
+browser.close()
