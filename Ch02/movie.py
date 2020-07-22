@@ -22,13 +22,12 @@ browser = webdriver.Chrome('../Ch01/chromedriver.exe')
 browser.implicitly_wait(3)
 
 # 랭크 페이지 번호 변수 선언
-page = 0
+page = 1
 
 while True:
 
     # 랭크 변수 선언(0 ~ 49)
-    i = 0
-    time.sleep(1)
+    r = 0
 
     while True:
         #네이버 영화 랭킹 평점순 이동
@@ -38,7 +37,7 @@ while True:
         try:
             #영화 랭킹 클릭
             ranks = browser.find_elements_by_css_selector('#old_content > table > tbody > tr > td.title > div > a')
-            ranks[i].click()
+            ranks[r].click()
             browser.implicitly_wait(3)
         except:
             break
@@ -105,7 +104,7 @@ while True:
             page_num += 1
 
         # 그 다음 영화 리뷰 수집을 위한 랭크 변수 증가
-        i += 1
+        r += 1
 
     page += 1
 
