@@ -94,8 +94,8 @@ while True:
         logger.info('최신순 클릭')
 
         #MongoDB 접속, DB, Collection 선택
-        conn = mongo('mongodb://chhak:1234@192.168.50.82:27017/chhak')
-        db = conn.get_database('chhak')
+        conn = mongo('mongodb://cjh:1234@192.168.50.82:27017/cjh')
+        db = conn.get_database('cjh')
         collection = db.get_collection('movies')
 
         #현재 페이지 설정
